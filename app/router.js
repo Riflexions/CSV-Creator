@@ -7,6 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('creator', function() {
+    this.route('fields');
+    this.route('data-entry');
+    this.route('data-view');
+  });
 });
 
 export default Router;

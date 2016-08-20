@@ -1,1 +1,24 @@
-{{yield}}
+<table class="table table-bordered table-striped table-hover table-responsive">
+    <thead>
+        <tr>
+            {{#each fields as |field|}}
+            <th>
+                {{field}}
+            </th>
+            {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data as |d|}}
+        <tr>
+            {{#each d as |v k|}}
+            <td>
+               {{v}}
+            </td>
+            {{/each}}
+        </tr>
+        {{else}}
+        <p>No Elements</p>
+        {{/each}}
+    </tbody>
+</table>

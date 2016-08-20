@@ -1,53 +1,33 @@
-# Csv-builder
-
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
-
-## Installation
-
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+CSV Builder
+*****************
+*****************
+    Features:
+    ***********
+    1. User must be able to create a sv file by data entry
+    2. User must be able to specify the fields of the csv
+    3. User must be able to import an existing csv and add to it
+    4. User must be able to select form view or table view for data entry
+    6. User must be able to view existing data
+    7. User must be able to download CSV generated
+    
+    Structure:
+    *************
+    ApplicationRoute
+        Index
+        Creator
+            Fields
+            Data Entry
+            Data View
+    
+    CSV Utility
+    ****************
+    Read CSV file from disk and load into memory
+    Write in memory data to CSV
+    Extract fields from a given csv
+    
+    
+    Unknowns
+    ******************
+    How to upload a csv on the client side and get values in js
+    How to take in memory data and create a file from it for download
+    

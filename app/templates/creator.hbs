@@ -1,1 +1,17 @@
-{{outlet}}
+<div class="container">
+    <div class="row">
+        <ul class="nav nav-tabs">
+            {{#link-to 'creator.fields' tagName='li'}}{{#link-to 'creator.fields'}}Fields
+                 {{/link-to}} {{/link-to}}
+
+            {{#link-to 'creator.data-entry' tagName='li'}}{{#link-to 'creator.data-entry'}}Entry
+                 {{/link-to}} {{/link-to}}
+            {{#link-to 'creator.data-view' tagName='li'}}{{#link-to 'creator.data-view'}}Fields
+                 {{/link-to}} {{/link-to}}
+        </ul>
+    </div>
+    {{outlet}}
+</div>
+
+
+

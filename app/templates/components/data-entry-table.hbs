@@ -1,1 +1,34 @@
-{{yield}}
+<table class="table table-bordered table-striped table-hover table-responsive">
+    <thead>
+        <tr>
+            {{#each fields as |field|}}
+            <th>
+                {{field}}
+            </th>
+            {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data as |d|}}
+        <tr>
+            {{#each d as |v k|}}
+            <td>
+                {{v}}
+            </td>
+            {{/each}}
+        </tr>
+        {{else}}
+        <p>No Elements</p>
+        {{/each}}
+        <tr>
+            {{#each fields as |field|}}
+            <td>
+                {{input type="text" value=field_value name='{{field}}' class="form-control input-md"}}
+            </td>
+            {{/each}}
+        </tr>
+    </tbody>
+</table>
+<div class="text-center">
+    <a id="add_row" class="btn btn-default text-center">Add Row</a>
+</div>

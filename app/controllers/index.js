@@ -1,6 +1,7 @@
 import Ember from 'ember';
 /* globals Papa, $ */
 export default Ember.Controller.extend({
+    fPath: '',
     showUploader: false,
     actions: {
         newCSV: function () {
@@ -11,31 +12,17 @@ export default Ember.Controller.extend({
         },
         clickEx: function () {
             this.set('showUploader', true);
-
         },
         loadCsv: function () {
             var self = this;
             var store = this.get('store');
-
             var fileReader = new FileReader();
-            console.log(fileReader);
-            var fname = this.get('fPath');
-            console.log(fname);
-            if (fname === undefined) {
+            var fname = 2;
+            if ($('#file-up')[0].files[0] === undefined) {
                 alert("Please input a file");
             } else {
-
-
-
-
-
                 fileReader.onload = function (e) {
-                    console.log(e);
                     var csv = Papa.parse(e.target.result);
-                    console.log(csv);
-                    console.log(JSON.stringify(csv.data));
-                    console.log('fields: ', csv.data);
-
                     Ember.RSVP.hash({
                         fields: store.findAll('field-list'),
                         models: store.findAll('csv-model')
@@ -56,7 +43,7 @@ export default Ember.Controller.extend({
                             })
                     ]);
                     }).then((data) => {
-                        console.log('S: ', data);
+                        self.set('showUploader', false);
                         self.transitionToRoute('creator.data-view');
                     });
                 };

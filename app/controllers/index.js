@@ -17,7 +17,6 @@ export default Ember.Controller.extend({
             var self = this;
             var store = this.get('store');
             var fileReader = new FileReader();
-            var fname = 2;
             if ($('#file-up')[0].files[0] === undefined) {
                 alert("Please input a file");
             } else {

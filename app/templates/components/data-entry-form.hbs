@@ -1,14 +1,16 @@
+<br>
 <form>
     <div class="form form-inline">
-        {{#each fields as |field|}}
+        {{#each fieldList.fields as |field|}}
         <div class="form-group ">
             <label class="sr-only" for="city">Enter the field name:</label>
-            {{input type="text" value=field_name name='{{field}}' class="form-control input-md"}}
+            {{input type="text" value=field name='{{field}}' class="form-control input-md"}}
         </div>
         {{else}}
         <p>No Elements</p>
         {{/each}}
     </div>
+    <br>
     <div class="text-center">
         <button {{action 'addFields'}} class="btn btn-default text-center">Add Element</button>
     </div>

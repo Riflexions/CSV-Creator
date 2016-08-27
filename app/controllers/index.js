@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
                 var csv = Papa.parse(e.target.result);
                 console.log(csv);
                 console.log(JSON.stringify(csv.data));
-                console.log('fields: ', csv.data);
+                console.log('Total length including fields, data & empty last element : ', csv.data.length);
 
                 Ember.RSVP.hash({
                     fields: store.findAll('field-list'),
@@ -31,16 +31,17 @@ export default Ember.Controller.extend({
                         models: modelList
                     });
                 }).then(() => {
+                    var fields = store.createRecord('field-list', {
+                        fields: csv.data.splice(0, 1)[0]
+                    });
+                    var records = store.createRecord('csv-model', {
+                        records: csv.data
+                    });
                     return Ember.RSVP.all([
-                        store.createRecord('field-list', {
-                            fields: csv.data.splice(0, 1)[0]
-                        }),
-                        store.createRecord('csv-model', {
-                            records: csv.data
-                        })
+                        fields.save(),
+                        records.save()
                     ]);
-                }).then((data) => {
-                    console.log('S: ', data);
+                }).then(() => {
                     self.transitionToRoute('creator.data-view');
                 });
             }

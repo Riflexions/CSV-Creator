@@ -22,9 +22,9 @@
         <p>No Elements</p>
         {{/each}}
         <tr>
-            {{#each dataList.records as |rec|}}
+            {{#each fieldList.fields as |field|}}
             <td>
-                {{input type="text" value=field_value name='{{rec}}' class="form-control input-md"}}
+                {{input type="text" value=field_value class="form-control input-md"}}
             </td>
             {{/each}}
         </tr>

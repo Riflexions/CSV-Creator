@@ -2,16 +2,17 @@
 <form>
     <div class="form form-inline">
         {{#each fieldList.fields as |field|}}
-        <div class="form-group ">
-            <label class="sr-only" for="city">Enter the field name:</label>
-            {{input type="text" value=field name='{{field}}' class="form-control input-md"}}
-        </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    {{field-input field=field}}
+                </li>
+            </ul>
         {{else}}
         <p>No Elements</p>
         {{/each}}
     </div>
     <br>
     <div class="text-center">
-        <button {{action 'addFields'}} class="btn btn-default text-center">Add Element</button>
+        <a id="add_element" class="btn btn-default text-center">Add Element</a>
     </div>
 </form>

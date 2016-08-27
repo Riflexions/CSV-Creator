@@ -2,10 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
     actions: {
-        addFields: function () {
+        addFields: function (name, age) {
             var self = this;
+            var store = self.get('store');
 
-            return self.get('store').findAll('field-list');
+            store.findAll('field-list').then((fields) => {
+                
+            })
         },
         deleteFields: function () {
 

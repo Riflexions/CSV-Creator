@@ -2,30 +2,22 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-offset-3 col-sm-3">
-                {{#link-to 'creator.fields' class="btn btn-default"}}New{{/link-to}}
+                <button {{action 'newCSV'}} class="btn btn-default">New</button>
             </div>
             <div class="col-sm-3">
-                <button class="btn btn-default" {{action 'clickEx'}}>Existing</button>
+                <button class="btn btn-default">Existing</button>
             </div>
-
         </div>
     </div>
 </div>
-<br>
-<br>
-
 <div class="section">
     <div class="container">
         <div class="row">
-            {{#if showUploader}}
             <div class="col-sm-offset-6 col-sm-3">
                 {{input type="file" id="file-up" value=fPath}}
-                <br>
                 <button {{action 'loadCsv'}} class="btn btn-default">Load</button>
             </div>
-            {{/if}}
         </div>
     </div>
 </div>
-
 {{outlet}}

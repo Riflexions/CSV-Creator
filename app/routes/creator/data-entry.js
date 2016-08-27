@@ -5,7 +5,7 @@ export default Ember.Route.extend({
         var self = this;
         return Ember.RSVP.hash({
             fields: self.get('store').findAll('field-list'),
-            datum: self.get('store').findAll('csv-model')
+            records: self.get('store').findAll('csv-model')
         });
     }
 });

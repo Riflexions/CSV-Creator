@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
                     records.save()
                 ]);
             }).then(() => {
-                self.transitionToRoute('creator.fields');
+                self.transitionToRoute('creator.data-entry');
             });
         },
         existingCSV: function () {

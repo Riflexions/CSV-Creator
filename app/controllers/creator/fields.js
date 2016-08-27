@@ -4,11 +4,8 @@ export default Ember.Controller.extend({
     actions: {
         addFields: function (name, age) {
             var self = this;
-            var store = self.get('store');
 
-            store.findAll('field-list').then((fields) => {
-                
-            })
+            return self.get('store').findAll('field-list');
         },
         deleteFields: function () {
 

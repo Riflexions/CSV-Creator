@@ -20,6 +20,7 @@ export default Ember.Controller.extend({
             if ($('#file-up')[0].files[0] === undefined) {
                 alert("Please input a file");
             } else {
+                self.send('showLoader',true);
                 fileReader.onload = function (e) {
                     var csv = Papa.parse(e.target.result);
                     Ember.RSVP.hash({
@@ -41,8 +42,9 @@ export default Ember.Controller.extend({
                                 records: csv.data
                             })
                     ]);
-                    }).then((data) => {
+                    }).then(() => {
                         self.set('showUploader', false);
+                        self.send('showLoader',false);
                         self.transitionToRoute('creator.data-view');
                     });
                 };

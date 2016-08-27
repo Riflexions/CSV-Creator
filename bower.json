@@ -5,6 +5,7 @@
     "ember-cli-shims": "0.1.1",
     "ember-qunit-notifications": "0.1.0",
     "bootstrap": "^3.3.7",
-    "rsvp.js": "rsvp#^3.2.1"
+    "rsvp.js": "rsvp#^3.2.1",
+    "font-awesome": "~4.5.0"
   }
 }

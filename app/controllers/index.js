@@ -39,6 +39,7 @@ export default Ember.Controller.extend({
             var store = this.get('store');
 
             var fileReader = new FileReader();
+
             fileReader.onload = function (e) {
                 console.log(e);
                 var csv = Papa.parse(e.target.result);
@@ -90,6 +91,7 @@ export default Ember.Controller.extend({
                     }).then((data) => {
                         console.log('S: ', data);
                         self.transitionToRoute('creator.data-view');
+
                     });
                     var records = store.createRecord('csv-model', {
                         records: csv.data

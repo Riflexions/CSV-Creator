@@ -2,17 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model() {
-        var csv = {
-            fields: fields,
-            data: data
-        };
-        console.log(csv);
-        return csv;
-    }
+        var self = this;
+        return Ember.RSVP.hash({
+            fields: self.get('store').findAll('field-list'),
+            records: self.get('store').findAll('csv-model')
+        });
+    }   
 });
 
+/*
 var fields = ['id', 'name', 'age'];
 var data = [["1", "Chirag", "24"], ["2", "Rajat", "24"], ["3", "Bharath", "23"]];
+*/
 
 /*
 [

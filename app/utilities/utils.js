@@ -15,4 +15,4 @@ function deleteOldRecords(thisObj) {
 
 export default {
     deleteOldRecords: deleteOldRecords
-}
+};

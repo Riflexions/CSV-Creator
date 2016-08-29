@@ -5,18 +5,24 @@
                 <button {{action 'newCSV'}} class="btn btn-default">New</button>
             </div>
             <div class="col-sm-3">
-                <button class="btn btn-default">Existing</button>
+                <button class="btn btn-default" {{action 'clickEx'}}>Existing</button>
             </div>
         </div>
     </div>
 </div>
+
+<br>
+<br>
 <div class="section">
     <div class="container">
         <div class="row">
+            {{#if showUploader}}
             <div class="col-sm-offset-6 col-sm-3">
-                {{input type="file" id="file-up" value=fPath}}
+                 {{input type="file" id="file-up"}}
+                <br>
                 <button {{action 'loadCsv'}} class="btn btn-default">Load</button>
             </div>
+            {{/if}}
         </div>
     </div>
 </div>

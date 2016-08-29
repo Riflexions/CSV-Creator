@@ -107,4 +107,4 @@ export default Ember.Controller.extend({
                                         fileReader.readAsText($('#file-up')[0].files[0]);
                                     }
                                 }
-                            });
+});

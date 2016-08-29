@@ -2,7 +2,6 @@ import Ember from 'ember';
 import utils from './../utilities/utils';
 
 export default Ember.Controller.extend({
-    showUploader: false,
     actions: {
         newCSV: function () {
             var self = this;
@@ -24,10 +23,6 @@ export default Ember.Controller.extend({
             });
         },
         existingCSV: function () {
-
-        },
-        clickEx: function () {
-            this.set('showUploader', true);
 
         },
         loadCsv: function () {

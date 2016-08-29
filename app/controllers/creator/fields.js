@@ -4,9 +4,6 @@ export default Ember.Controller.extend({
     actions: {
         addFields: function (fieldName) {
             var self = this;
-
-            return self.get('store').findAll('field-list');
-
             var store = self.get('store');
             console.log(fieldName);
             store.findAll('field-list').then((fields) => {
@@ -28,7 +25,6 @@ export default Ember.Controller.extend({
             }).then(() => {
                 alert('Field created successfully');
             });
-
         },
         deleteFields: function () {
 

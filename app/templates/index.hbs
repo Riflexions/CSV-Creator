@@ -1,23 +1,23 @@
 <div class="section">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-offset-3 col-sm-3">
+        <div class="row text-center">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <button {{action 'newCSV'}} class="btn btn-default">New</button>
             </div>
-            <div class="col-sm-3">
-                <button class="btn btn-default">Existing</button>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <button {{action 'existingCSV'}} class="btn btn-default">Existing</button>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                {{#if isVisible}}
+                    <button {{action 'showLoadCSVButtons'}} class="btn btn-default">Load from System</button>
+                {{else}}
+                    {{input type="file" id="file-up" value=fPath}}
+                    <button {{action 'loadCsv'}} class="btn btn-default">Load</button>
+                {{/if}}
             </div>
         </div>
     </div>
 </div>
 <div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-offset-6 col-sm-3">
-                {{input type="file" id="file-up" value=fPath}}
-                <button {{action 'loadCsv'}} class="btn btn-default">Load</button>
-            </div>
-        </div>
-    </div>
 </div>
 {{outlet}}

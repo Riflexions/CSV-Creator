@@ -2,17 +2,31 @@
 <form>
     <div class="form form-inline">
         {{#each fieldList.fields as |field|}}
-            <ul class="list-group">
-                <li class="list-group-item">
-                    {{field-input field=field}}
-                </li>
-            </ul>
+        <ul class="list-group">
+            <li class="list-group-item">
+                {{field-input field=field}}
+            </li>
+        </ul>
         {{else}}
         <p>No Elements</p>
         {{/each}}
     </div>
-    <br>
-    <div class="text-center">
-        <a id="add_element" class="btn btn-default text-center">Add Element</a>
+    <div class="form form-inline">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <label for="fields">Enter the new field name: </label>
+                {{input type="text" value=newField class="form-control input-md margin-left-10px"}}
+                <div class="pull-right margin-top-10px">
+                    <i class="fa fa-save fa-lg color-green margin-right-10px" {{action 'addField'}}></i>
+                    <i class="fa fa-close fa-lg color-red" {{action 'edit'}}></i>
+                </div>
+            </li>
+        </ul>
     </div>
+    <br>
+<!--
+    <div class="text-center">
+        <a {{action 'addField'}} class="btn btn-default text-center">Add Element</a>
+    </div>
+-->
 </form>

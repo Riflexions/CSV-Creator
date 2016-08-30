@@ -1,10 +1,11 @@
 <br>
-<form>
+<div>
     <div class="form form-inline">
-        {{#each fieldList.fields as |field|}}
+        {{#each fieldList.fields as |field index|}}
         <ul class="list-group">
             <li class="list-group-item">
-                {{field-input field=field}}
+                {{index}} 
+                {{field-input index=index deleteField=(action 'deleteField' index)}}
             </li>
         </ul>
         {{else}}
@@ -25,8 +26,5 @@
     </div>
     <br>
 
-    <div class="text-center">
-        <button {{action 'addFields'}} class="btn btn-default text-center">Add Element</button>
-    </div>
 
-</form>
+</div>

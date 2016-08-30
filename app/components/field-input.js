@@ -2,13 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     actions: {
-        save() {
+        save: function () {
+            alert("bye");
             this.toggleProperty('isEditable');
         },
-        edit() {
+        edit: function () {
             this.toggleProperty('isEditable');
-        },
-        delete() {
         }
+       
+
+
     }
 });

@@ -1,5 +1,6 @@
 {{#if isEditable}}
-<label for="fields">Enter the new field name: </label>
+<label for="fields">
+    Enter the new field name: </label>
 {{input type="text" value=field class="form-control input-md margin-left-10px"}}
 <div class="pull-right margin-top-10px">
     <i class="fa fa-save fa-lg color-green margin-right-10px" {{action 'save'}}></i>
@@ -10,6 +11,6 @@
 <label class="border-round margin-left-10px">{{field}}</label>
 <div class="pull-right margin-top-10px">
     <i class="fa fa-edit fa-lg color-blue margin-right-10px" {{action 'edit'}}></i>
-    <i class="fa fa-trash fa-lg color-red" {{action 'delete'}}></i>
+    <i class="fa fa-trash fa-lg color-red" {{action 'delete'}}>  </i>
 </div>
 {{/if}}

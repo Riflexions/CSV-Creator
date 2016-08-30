@@ -2,10 +2,20 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     actions: {
-        addField() {
+        addField: function () {
+            alert("gandu");
             var fieldName = this.get('newField');
             this.sendAction('addFields', fieldName);
             this.set('newField', '');
-        }
+        },
+        deleteField: function () {
+            alert("hi");
+           console.log("rajath");
+            this.sendAction('deleteFields');
+
+
+        },
+       
+
     }
 });

@@ -30,6 +30,7 @@ export default Ember.Controller.extend({
             this.set('showUploader', true);
 
         },
+       
         loadCsv: function () {
             var self = this;
             var store = this.get('store');

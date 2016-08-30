@@ -60,13 +60,22 @@ export default Ember.Controller.extend({
                 console.log('updateFields: ', fieldsList);
                 model.set('fields', fieldsList);
                 return model.save();
+            }).then(() => {
+                return store.findAll('csv-model');
+            }).then((data) => {
+                var model = data.get('firstObject');
+                var modelList = model.get('records');
+                console.log('Records: ', modelList);
+                var newRecords = [];
+                modelList.forEach((record) => {
+                    record.splice(index, 1);
+                    newRecords.push(record);
+                });
+                model.set('records', newRecords);
+                return model.save();
             }).catch((err) => {
                 console.log('Following error occurred: ', err);
             });
-        },
-
-        clearFields: function () {
-
         }
     }
 });

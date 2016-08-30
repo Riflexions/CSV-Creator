@@ -4,7 +4,6 @@
         {{#each fieldList.fields as |field index|}}
         <ul class="list-group">
             <li class="list-group-item">
-                {{index}}
                 {{field-input field=field index=index updateField=(action 'updateField') deleteField=(action 'deleteField')}}
             </li>
         </ul>

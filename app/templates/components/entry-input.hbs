@@ -1,0 +1,15 @@
+{{#if isEditable1}}
+
+{{input type="text" value=recordValue class="form-control input-md margin-left-10px"}}
+<div class="pull-right margin-top-10px">
+    <i class="fa fa-save fa-lg color-green margin-right-10px" {{action 'updateRec'}}></i>
+    <i class="fa fa-close fa-lg color-red" {{action 'editRec'}}></i>
+</div>
+{{else}}
+
+{{recordValue}}
+<div class="pull-right margin-top-10px">
+    <i class="fa fa-edit fa-lg color-blue margin-right-10px" {{action 'editRec'}}></i>
+    <i class="fa fa-trash fa-lg color-red" {{action 'deleteRec'}}>  </i>
+</div>
+{{/if}}

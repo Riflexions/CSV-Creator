@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     actions: {
         addFields: function (fieldName) {
-            alert("in add");
             var self = this;
             var store = self.get('store');
             console.log(fieldName);
@@ -23,14 +22,11 @@ export default Ember.Controller.extend({
                     return d;
                 }));
                 return model.save();
-            }).then(() => {
-                alert('Field created successfully');
             });
         },
 
         deleteFields: function (index) {
             var self = this;
-            alert(index);
             var store = self.get('store');
             store.findAll('field-list').then((fields) => {
                 var store = self.get('store');
@@ -51,8 +47,6 @@ export default Ember.Controller.extend({
                     return d;
                 }));
                 return model.save();
-            }).then(() => {
-                alert('Field Deleted successfully');
             });
 
         },

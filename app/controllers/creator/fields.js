@@ -9,9 +9,7 @@ export default Ember.Controller.extend({
             store.findAll('field-list').then((fields) => {
                 var model = fields.get('firstObject');
                 var fieldsList = model.get('fields');
-                console.log('Before addFields: ', fieldsList);
                 fieldsList.push(fieldName);
-                console.log('After addFields: ', fieldsList);
                 model.set('fields', fieldsList);
                 return model.save();
             }).then(() => {
@@ -28,43 +26,9 @@ export default Ember.Controller.extend({
                 alert('Field created successfully');
             });
         },
+        deleteFields: function () {
 
-        updateFields: function (field, index) {
-            var self = this;
-            var store = self.get('store');
-            console.log('Inside updateFields of fields controller');
-            
-            store.findAll('field-list').then((fields) => {
-                var model = fields.get('firstObject');
-                var fieldsList = model.get('fields');
-                console.log('Old Fields: ', fieldsList);
-                fieldsList[index] = field;
-                console.log('updateFields: ', fieldsList);
-                model.set('fields', fieldsList);
-                return model.save();
-            }).catch((err) => {
-                console.log('Following error occurred: ', err);
-            });
         },
-
-        deleteFields: function (index) {
-            var self = this;
-            var store = self.get('store');
-            console.log('Inside updateFields of fields controller');
-            
-            store.findAll('field-list').then((fields) => {
-                var model = fields.get('firstObject');
-                var fieldsList = model.get('fields');
-                console.log('Old Fields: ', fieldsList);
-                fieldsList.splice(index, 1);
-                console.log('updateFields: ', fieldsList);
-                model.set('fields', fieldsList);
-                return model.save();
-            }).catch((err) => {
-                console.log('Following error occurred: ', err);
-            });
-        },
-
         clearFields: function () {
 
         }

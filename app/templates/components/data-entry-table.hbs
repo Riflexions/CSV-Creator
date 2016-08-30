@@ -1,39 +1,35 @@
 <br>
-<div class="table-responsive">
-    <table class="table table-bordered table-striped table-hover">
-        <thead>
-            <tr>
-                {{#each fieldList.fields as |field|}}
-                <th>
-                    {{field}}
-                </th>
-                {{/each}}
-            </tr>
-        </thead>
-        <tbody>
-            {{#each dataList.records as |rec|}}
-            <tr>
-                {{#each rec as |r|}}
-                <td>
-                    {{r}}
-                </td>
-                {{/each}}
-            </tr>
-            {{else}}
-            <p>No Elements</p>
+<table class="table table-bordered table-striped table-hover table-responsive">
+    <thead>
+        <tr>
+            {{#each fieldList.fields as |field|}}
+            <th>
+                {{field}}
+            </th>
             {{/each}}
-            <tr>
-                {{#each fieldList.fields as |field|}}
-                <td>
-                    {{input type="text" placeholder="Enter" class="form-control input-md"}}
-                </td>
-                {{/each}}
-            </tr>
-        </tbody>
-    </table>
-</div>
-<br>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dataList.records as |rec|}}
+        <tr>
+            {{#each rec as |r|}}
+            <td>
+                {{r}}
+            </td>
+            {{/each}}
+        </tr>
+        {{else}}
+        <p>No Elements</p>
+        {{/each}}
+        <tr>
+            {{#each fieldList.fields as |field|}}
+            <td>
+                {{input type="text" placeholder="Enter" class="form-control input-md"}}
+            </td>
+            {{/each}}
+        </tr>
+    </tbody>
+</table>
 <div class="text-center">
     <a id="add_row" class="btn btn-default text-center">Add Row</a>
 </div>
-<br>

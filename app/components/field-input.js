@@ -8,8 +8,12 @@ export default Ember.Component.extend({
         },
         edit: function () {
             this.toggleProperty('isEditable');
+        },
+        deleteField: function () {
+            alert("delete");
+            this.get('deleteFields');
+
         }
-       
 
 
     }

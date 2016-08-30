@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
             this.set('showUploader', true);
 
         },
-       
+
         loadCsv: function () {
             var self = this;
             var store = this.get('store');
@@ -42,6 +42,7 @@ export default Ember.Controller.extend({
                 fileReader.onload = function (e) {
                     console.log(e);
                     var csv = Papa.parse(e.target.result);
+                    console.log(csv);
                     utils.deleteOldRecords(self).then(() => {
                         var fields = store.createRecord('field-list', {
                             fields: csv.data.splice(0, 1)[0]

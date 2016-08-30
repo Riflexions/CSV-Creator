@@ -4,8 +4,7 @@
         {{#each fieldList.fields as |field index|}}
         <ul class="list-group">
             <li class="list-group-item">
-                {{index}} 
-                {{field-input index=index deleteField=(action 'deleteField' index)}}
+                {{index}} {{field-input field=field index=index deleteFields=(action 'deleteFields')}}
             </li>
         </ul>
         {{else}}
@@ -25,6 +24,5 @@
         </ul>
     </div>
     <br>
-
 
 </div>

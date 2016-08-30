@@ -8,7 +8,7 @@ export default Ember.Component.extend({
             this.sendAction('addFields', fieldName);
             this.set('newField', '');
         },
-        deleteField: function () {
+        deleteFields: function () {
             alert("hi");
            console.log("rajath");
             this.sendAction('deleteFields');

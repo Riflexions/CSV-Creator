@@ -2,22 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     actions: {
-        save() {
-            var field = this.get('field');
-            var index = this.get('index');
-            this.sendAction('updateField', field, index);
-
-            console.log('field:', field, ' index:', index);
-            this.toggleProperty('isEditable');
+        addField() {
+            var fieldName = this.get('newField');
+            this.sendAction('addFields', fieldName);
+            this.set('newField', '');
         },
-        edit() {
-            this.toggleProperty('isEditable');
-            console.log(this.get('field'));
-            console.log(this.get('index'));
+        updateField(field, index) {
+            this.sendAction('updateFields', field, index);
         },
-        delete() {
-            var index = this.get('index');
-            this.sendAction('deleteField', index);
+        deleteField(index) {
+            this.sendAction('deleteFields', index);
         }
     }
 });

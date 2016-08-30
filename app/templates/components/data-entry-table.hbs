@@ -1,35 +1,39 @@
 <br>
-<table class="table table-bordered table-striped table-hover table-responsive">
-    <thead>
-        <tr>
-            {{#each fieldList.fields as |field|}}
-            <th>
-                {{field}}
-            </th>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                {{#each fieldList.fields as |field|}}
+                <th>
+                    {{field}}
+                </th>
+                {{/each}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each dataList.records as |rec|}}
+            <tr>
+                {{#each rec as |r|}}
+                <td>
+                    {{r}}
+                </td>
+                {{/each}}
+            </tr>
+            {{else}}
+            <p>No Elements</p>
             {{/each}}
-        </tr>
-    </thead>
-    <tbody>
-        {{#each dataList.records as |rec|}}
-        <tr>
-            {{#each rec as |r|}}
-            <td>
-                {{r}}
-            </td>
-            {{/each}}
-        </tr>
-        {{else}}
-        <p>No Elements</p>
-        {{/each}}
-        <tr>
-            {{#each fieldList.fields as |field|}}
-            <td>
-                {{input type="text" placeholder="Enter" class="form-control input-md"}}
-            </td>
-            {{/each}}
-        </tr>
-    </tbody>
-</table>
-<div class="text-center">
-    <a id="add_row" class="btn btn-default text-center">Add Row</a>
+            <tr>
+                {{#each fieldList.fields as |field index|}}
+                <td>
+                    {{input-component index=index setRecordValue=(action 'setRecordValue')}}
+                </td>
+                {{/each}}
+            </tr>
+        </tbody>
+    </table>
 </div>
+<br>
+<div class="text-center">
+    <a id="add_row" class="btn btn-default text-center" {{action "saveToDS"}}>Add Row</a>
+</div>
+<br>

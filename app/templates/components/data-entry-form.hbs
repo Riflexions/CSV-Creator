@@ -1,17 +1,16 @@
 <br>
 <form>
     <div class="form form-inline">
-        {{#each fieldList.fields as |field|}}
+        {{#each fieldList.fields as |field index|}}
         <ul class="list-group">
             <li class="list-group-item">
-                {{field-input field=field}}
+                {{field-input field=field index=index}}
             </li>
         </ul>
         {{else}}
-        <p>No Elements</p>
+            <p>No Elements</p>
         {{/each}}
-    </div>
-    <div class="form form-inline">
+
         <ul class="list-group">
             <li class="list-group-item">
                 <label for="fields">Enter the new field name: </label>

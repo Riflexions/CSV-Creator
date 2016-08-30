@@ -31,6 +31,9 @@ export default Ember.Controller.extend({
         },
         clearFields: function () {
 
+        },
+        updateFields: function () {
+        
         }
     }
 });

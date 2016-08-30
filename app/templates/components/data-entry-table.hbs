@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            {{#each dataList.records as |rec|}}
+            {{#each dataList.records as |rec indexes|}}
             <tr>
                 {{#each rec as |r|}}
                 <td>
@@ -23,9 +23,9 @@
             <p>No Elements</p>
             {{/each}}
             <tr>
-                {{#each fieldList.fields as |field|}}
+                {{#each fieldList.fields as |field index|}}
                 <td>
-                    {{input type="text" placeholder="Enter" class="form-control input-md"}}
+                    {{input-fields index=index indexes=indexes createRecord=(action 'createRecord')}}
                 </td>
                 {{/each}}
             </tr>
@@ -34,6 +34,6 @@
 </div>
 <br>
 <div class="text-center">
-    <a id="add_row" class="btn btn-default text-center">Add Row</a>
+    <a id="add_row" class="btn btn-default text-center" {{action 'addRecord'}}>Add Row</a>
 </div>
 <br>

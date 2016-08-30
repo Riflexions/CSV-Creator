@@ -11,11 +11,11 @@
             </tr>
         </thead>
         <tbody>
-            {{#each dataList.records as |rec|}}
+            {{#each dataList.records as |rec index1|}}
             <tr>
-                {{#each rec as |r|}}
+                {{#each rec as |recordValue index|}}
                 <td>
-                    {{r}}
+                    {{entry-input recordValue=recordValue index=index index1=index1 deleteRecs=(action 'deleteRecs') editRecs=(action 'editRecs')}}
                 </td>
                 {{/each}}
             </tr>
